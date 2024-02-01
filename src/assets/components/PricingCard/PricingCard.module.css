@@ -1,10 +1,9 @@
 .card {
-  max-width: 280px;
+  max-width: 500px;
   background-color: white;
-  border: 1px solid black;
+  --padding-y: 40px;
   border-radius: 5px;
-  --price-theme: #f2746dff;
-  --price-theme-darker: #d43533;
+  box-shadow: 0px 0px 20px color-mix(in srgb, black, transparent 80%);
 }
 
 .card--startup {
@@ -15,21 +14,22 @@
 .card--pro {
   --price-theme: #f2746dff;
   --price-theme-darker: #d43533;
+  --padding-y: 60px;
 }
 
 .card--enterprise {
-  --price-theme: #f2746dff;
-  --price-theme-darker: #d43533;
+  --price-theme: #47b8e0;
+  --price-theme-darker: #1378d5;
 }
 
 .card__wrapper {
   width: 90%;
   margin: 0 auto;
-  padding: 20px 10px;
+  padding: var(--padding-y) 10px;
 }
 
 .card__label {
-  color: black;
+  /* color: black; */
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -52,7 +52,7 @@
 }
 
 .card__price-amount {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--price-theme);
 }
@@ -65,7 +65,7 @@
 
 .card__benefits-label {
   color: var(--price-theme);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   text-align: center;
   margin-top: 20px;
@@ -105,4 +105,5 @@
   margin-top: 20px;
   font-size: 1.2rem;
   letter-spacing: 2px;
+  /* margin-bottom: 20px; */
 }

@@ -1,11 +1,8 @@
 import styles from "./Button.module.css";
 
-interface Props {
-  className: string;
-  children: React.ReactNode;
-}
 
-function Button({ className, children }: Props) {
+
+function Button({ className, children }) {
   return (
     <button className={`${className} ${styles.button}`}>{children}</button>
   );
