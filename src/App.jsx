@@ -34,20 +34,29 @@ function App() {
   ];
 
   return (
-    <div className={styles.prices}>
-      {cards.map((card) => {
-        return (
-          <PricingCard
-            key={card.label}
-            label={card.label}
-            duration={card.duration}
-            price={card.price}
-            imageAlt={card.imageAlt}
-            image={card.image}
-            benefits={card.benefits}
-          />
-        );
-      })}
+    <div>
+      <div className={styles.bg}>
+        <h1 className={styles.heading}>CHOOSE YOUR PLAN</h1>
+        <p className={styles.description}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          molestiae a odit labore ipsa tempore sit laboriosam corrupti.
+        </p>
+      </div>
+      <div className={`${styles.prices} container`}>
+        {cards.map((card) => {
+          return (
+            <PricingCard
+              key={card.label}
+              label={card.label}
+              duration={card.duration}
+              price={card.price}
+              imageAlt={card.imageAlt}
+              image={card.image}
+              benefits={card.benefits}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

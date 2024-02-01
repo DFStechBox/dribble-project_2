@@ -1,32 +1,17 @@
 import styles from "./PricingCard.module.css";
 import Button from "../Button/Button";
 
-interface Props {
-  label: string;
-  price: string;
-  duration: string;
-  image: string;
-  imageAlt: string;
-  benefits: string[];
-}
-
-function PricingCard({
-  label,
-  price,
-  duration,
-  image,
-  imageAlt,
-  benefits,
-}: Props) {
+function PricingCard({ label, price, duration, image, imageAlt, benefits }) {
   const themeClasses = {
-    "Start-Up": styles["card--startup"],
+    "Start Up": styles["card--startup"],
     Pro: styles["card--pro"],
     Enterprise: styles["card--enterprise"],
   };
+
   const themeClass = themeClasses[label];
 
   return (
-    <div className={`${styles.card} ${themeClass} center-vertical`}>
+    <div className={`${styles.card} ${themeClass}`}>
       <div className={`${styles.card__wrapper} center-vertical`}>
         <span className={styles.card__label}>{label}</span>
         <div>
@@ -34,7 +19,9 @@ function PricingCard({
         </div>
         <div className={styles["card__price-label"]}>
           <span className={styles["card__price-amount"]}>{price}</span>
-          <span className={styles["card__price-duration"]}>{duration}</span>
+          {duration === "" ? null : (
+            <span className={styles["card__price-duration"]}>{duration}</span>
+          )}
         </div>
         <span className={styles["card__benefits-label"]}>
           Every thing in Free, Plus
